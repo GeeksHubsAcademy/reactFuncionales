@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+//Importamos las librerias necesarias para usar react-router-dom
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
+
+//Importamos los componentes funcionales
+import Register from './containers/Register/Register';
+import Home from './containers/Home/Home';
+
+//Enrutado con componentes funcionales 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' component={Home} exact/>
+          <Route path='/register' component={Register} exact/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
